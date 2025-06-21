@@ -34,3 +34,4 @@ plugins {
 
 include(":composeApp")
 include(":composeApp:wasmJsBrowserDevelopmentRun")
+include(":iosApp")
