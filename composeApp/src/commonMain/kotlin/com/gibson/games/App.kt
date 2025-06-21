@@ -18,26 +18,25 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import games.composeapp.generated.resources.Res
 import games.composeapp.generated.resources.compose_multiplatform
 
+import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.ui.Modifier
+import com.gibson.games.*
+
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(
-            modifier = Modifier
-                .safeContentPadding()
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
+    var selectedGame by remember { mutableStateOf<Game?>(null) }
+
+    Surface(modifier = Modifier.fillMaxSize()) {
+        if (selectedGame == null) {
+            GameMenu(onGameSelected = { selectedGame = it })
+        } else {
+            // When a game is selected, show the GameScreen.
+            // The onExit lambda sets the selected game back to null, returning to the menu.
+            GameScreen(game = selectedGame!!) {
+                selectedGame = null
             }
         }
     }
