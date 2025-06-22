@@ -61,6 +61,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
+            implementation("androidx.activity:activity-compose:1.8.2")
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
@@ -121,7 +122,7 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx")
-    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation("androidx.activity:activity-compose")
 
 
 
