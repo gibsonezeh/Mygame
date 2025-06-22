@@ -10,16 +10,16 @@ fun GameScreen(game: Game, onExit: () -> Unit) {
     when (game) {
         Game.LUDO -> {LudoNavigationScreen(onExit = onExit)}
 
-                    Game.CHECKERS -> { /* TODO: Implement Checkers Screen */
+        Game.CHECKERS -> { /* TODO: Implement Checkers Screen */
                     }
 
-                    Game.SNAKE -> { /* TODO: Implement Snake Screen */
+        Game.SNAKE -> { /* TODO: Implement Snake Screen */
                     }
 
-                    Game.CHESS -> { /* TODO: Implement Chess Screen */
+        Game.CHESS -> { /* TODO: Implement Chess Screen */
                     }
 
-                    Game.TIC_TAC_TOE -> { /* TODO: Implement TicTacToe Screen */
+        Game.TIC_TAC_TOE -> { /* TODO: Implement TicTacToe Screen */
                     }
                     // Add other games here
                 }
